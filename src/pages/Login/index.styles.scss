@@ -1,0 +1,22 @@
+.login_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+
+  h1 {
+    color: var(--mantine-color-secondary-0);
+  }
+}
+
+.form_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  height: 300px;
+
+  .mantine-Input-input.mantine-TextInput-input {
+    width: 300px;
+  }
+}

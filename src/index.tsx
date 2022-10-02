@@ -4,7 +4,7 @@ import { MantineProvider } from '@mantine/core';
 import { theme } from 'theme/theme';
 import { RouterProvider } from 'react-router';
 import { router } from 'routes/routes';
-import Template from 'components/commons/Template';
+import Template from 'templates/Template';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement,
