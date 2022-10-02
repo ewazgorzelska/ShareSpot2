@@ -16,7 +16,15 @@
   gap: 30px;
   height: 300px;
 
-  .mantine-Input-input.mantine-TextInput-input {
-    width: 300px;
+  .mantine-Input-input.mantine-TextInput-input,
+  .mantine-Input-input.mantine-PasswordInput-input {
+    width: 500px;
+  }
+
+  .mantine-TextInput-error,
+  .mantine-PasswordInput-error {
+    color: #fa5252;
+    border-color: #fa5252;
+    margin-top: 10px;
   }
 }
