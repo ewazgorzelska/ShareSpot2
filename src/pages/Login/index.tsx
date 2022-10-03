@@ -41,8 +41,7 @@ const Login = () => {
             label='Your e-mail:'
             type='email'
             withAsterisk
-            requiered
-            withError=''
+            required
             {...form.getInputProps('email')}
           />
           <PasswordInput
