@@ -1,6 +1,6 @@
 import { Button as MantineButton } from '@mantine/core';
 
-interface IButtonProps {
+export interface IButtonProps {
   text: string;
   onClickHandler?: () => void;
   type: 'button' | 'reset' | 'submit';

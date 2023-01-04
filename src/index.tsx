@@ -4,7 +4,7 @@ import { MantineProvider } from '@mantine/core';
 import { theme } from 'theme/theme';
 import { RouterProvider } from 'react-router';
 import { router } from 'routes/routes';
-import Template from 'templates/Template';
+import MainTemplate from 'templates/MainTemplate/MainTemplate';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement,
@@ -17,9 +17,9 @@ root.render(
       withNormalizeCSS
       theme={theme}
     >
-      <Template>
+      <MainTemplate>
         <RouterProvider router={router} />
-      </Template>
+      </MainTemplate>
     </MantineProvider>
   </React.StrictMode>,
 );

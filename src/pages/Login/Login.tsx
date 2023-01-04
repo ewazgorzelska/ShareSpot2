@@ -8,8 +8,8 @@ import {
   PASSWORD_MIN_LENGTH,
   REQUIRED_MESSAGE,
 } from 'yup/messages';
-import Button from 'components/commons/Button';
-import './index.styles.scss';
+import Button from 'components/commons/Button/Button';
+import './Login.styles.scss';
 
 interface ISignInFormValues {
   email: string;
