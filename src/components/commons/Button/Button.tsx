@@ -19,11 +19,11 @@ const Button: React.FC<IButtonProps> = ({
       disabled={disabled}
       styles={(theme) => ({
         root: {
-          backgroundColor: theme.colors.secondary[0],
           width: '150px',
+          backgroundColor: theme.colors.brand[1],
 
           '&:hover': {
-            backgroundColor: theme.colors.primary[0],
+            backgroundColor: theme.fn.darken(theme.colors.brand[1], 0.5),
           },
         },
       })}

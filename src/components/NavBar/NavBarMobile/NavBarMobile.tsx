@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { Burger, Drawer } from '@mantine/core';
 import Logo from '../Logo/Logo';
-
-import './NavBarMobile.styles.scss';
 import NavItem from '../NavItem/NavItem';
+import './NavBarMobile.styles.scss';
+import { navItemsData } from '../NavItem/data';
 
 const NavBarMobile = () => {
   const [opened, setOpened] = useState(false);
@@ -17,16 +17,15 @@ const NavBarMobile = () => {
         title={title}
         aria-label='Open navigation'
         size='lg'
-        styles={(theme) => ({
+        styles={{
           root: {
             height: '150px',
             width: '100px',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            color: theme.colors.secondary[0],
           },
-        })}
+        }}
       />
       <Logo />
       <Drawer
@@ -35,24 +34,26 @@ const NavBarMobile = () => {
         title={<Logo />}
         padding='xl'
         size='full'
-        styles={(theme) => ({
+        styles={{
           drawer: {
-            backgroundColor: theme.colors.primary[0],
+            backgroundColor: 'var(--mantine-color-brand-0)',
           },
           closeButton: {
-            color: theme.colors.secondary[0],
+            color: 'var(--mantine-color-brand-1)',
             width: '48px',
             height: '48px',
             '&:hover': {
               backgroundColor: 'inherit',
             },
           },
-        })}
+        }}
       >
         <div className='mobile-container'>
-          <NavItem url={'/'}>Section 1</NavItem>
-          <NavItem url={'/'}>Section 1</NavItem>
-          <NavItem url={'/'}>Section 1</NavItem>
+          {navItemsData.map((item) => (
+            <NavItem url={'/'} key={item}>
+              {item}
+            </NavItem>
+          ))}
         </div>
       </Drawer>
     </div>
