@@ -1,4 +1,4 @@
-import { Center, TextInput, PasswordInput } from '@mantine/core';
+import { Center, TextInput, PasswordInput, MediaQuery } from '@mantine/core';
 import { useForm, yupResolver } from '@mantine/form';
 import * as Yup from 'yup';
 import { SchemaOf } from 'yup';
@@ -10,6 +10,7 @@ import {
 } from 'yup/messages';
 import Button from 'components/commons/Button/Button';
 import './Login.styles.scss';
+import { useMediaQuery } from '@mantine/hooks';
 
 interface ISignInFormValues {
   email: string;
@@ -32,6 +33,8 @@ const Login = () => {
     },
   });
 
+  const largeScreen = useMediaQuery('(min-width: 900px)');
+
   return (
     <div className='login_container'>
       <h1>Log in to ShareSpot</h1>
@@ -43,12 +46,14 @@ const Login = () => {
             withAsterisk
             required
             {...form.getInputProps('email')}
+            w={largeScreen ? '500px' : '300px'}
           />
           <PasswordInput
             label='Your password:'
             withAsterisk
             required
             {...form.getInputProps('password')}
+            w={largeScreen ? '500px' : '300px'}
           />
           <Button text='Log in' type='submit' />
         </Center>
