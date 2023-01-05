@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Burger, Drawer } from '@mantine/core';
+import { Burger, Drawer, Flex } from '@mantine/core';
 import Logo from '../Logo/Logo';
 import NavItem from '../NavItem/NavItem';
 import './NavBarMobile.styles.scss';
@@ -10,7 +10,7 @@ const NavBarMobile = () => {
   const title = opened ? 'Close navigation' : 'Open navigation';
 
   return (
-    <div className='menu-container'>
+    <Flex justify='space-between' bg='var(--mantine-color-brand-0)'>
       <Burger
         opened={opened}
         onClick={() => setOpened((o) => !o)}
@@ -48,15 +48,15 @@ const NavBarMobile = () => {
           },
         }}
       >
-        <div className='mobile-container'>
+        <Flex justify='center' align='center' gap='50px' direction='column'>
           {navItemsData.map((item) => (
             <NavItem url={'/'} key={item}>
               {item}
             </NavItem>
           ))}
-        </div>
+        </Flex>
       </Drawer>
-    </div>
+    </Flex>
   );
 };
 

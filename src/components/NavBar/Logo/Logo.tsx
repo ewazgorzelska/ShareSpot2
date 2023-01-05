@@ -1,12 +1,20 @@
+import { Anchor, Image } from '@mantine/core';
 import { useMediaQuery } from '@mantine/hooks';
-import './Logo.styles.scss';
 
 const Logo = () => {
-  const largeScreen = useMediaQuery('(min-width: 767px)');
+  const mediumScreen = useMediaQuery('(min-width: 767px)');
   return (
-    <a href='/'>
-      <div className={`logo ${largeScreen ? `logo-desktop` : `logo-mobile`}`} />
-    </a>
+    <Anchor
+      href='/'
+      h={mediumScreen ? '200px' : '150px'}
+      w={mediumScreen ? '200px' : '150px'}
+    >
+      <Image
+        src={
+          mediumScreen ? 'assets/logo-primary.png' : 'assets/logo-mobile.png'
+        }
+      />
+    </Anchor>
   );
 };
 

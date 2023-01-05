@@ -20,10 +20,13 @@ const Button: React.FC<IButtonProps> = ({
       styles={(theme) => ({
         root: {
           width: '150px',
-          backgroundColor: theme.colors.brand[1],
+          backgroundColor: 'var(--mantine-color-brand-1)',
 
           '&:hover': {
-            backgroundColor: theme.fn.darken(theme.colors.brand[1], 0.5),
+            backgroundColor: theme.fn.darken(
+              'var(--mantine-color-brand-1)',
+              0.5,
+            ),
           },
         },
       })}

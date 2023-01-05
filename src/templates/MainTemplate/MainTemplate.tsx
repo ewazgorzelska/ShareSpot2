@@ -1,9 +1,8 @@
 import React, { PropsWithChildren } from 'react';
-import { MediaQuery, Paper } from '@mantine/core';
+import { AppShell, Container } from '@mantine/core';
+import { useMediaQuery } from '@mantine/hooks';
 import NavBar from 'components/NavBar/NavBar';
 import NavBarMobile from 'components/NavBar/NavBarMobile/NavBarMobile';
-
-import './MainTemplate.styles.scss';
 
 interface IMainTemplate {
   children: React.ReactNode;
@@ -12,23 +11,25 @@ interface IMainTemplate {
 const MainTemplate: React.FC<PropsWithChildren<IMainTemplate>> = ({
   children,
 }) => {
+  const mediumScreen = useMediaQuery('(min-width: 767px)');
+  const largeScreen = useMediaQuery('(min-width: 900px)');
   return (
-    <>
-      <MediaQuery smallerThan='sm' styles={{ display: 'none' }}>
-        <div className='container'>
-          <NavBar />
-          <Paper className='paper' radius='sm' shadow='sm' p='md'>
-            {children}
-          </Paper>
-        </div>
-      </MediaQuery>
-      <MediaQuery largerThan='sm' styles={{ display: 'none' }}>
-        <div className='container'>
-          <NavBarMobile />
-          {children}
-        </div>
-      </MediaQuery>
-    </>
+    <AppShell
+      padding='sm'
+      header={mediumScreen ? <NavBar /> : <NavBarMobile />}
+      styles={(theme) => ({
+        main: { backgroundColor: theme.colors.brand[0] },
+      })}
+    >
+      <Container
+        p='md'
+        size={largeScreen ? 'md' : 'xs'}
+        bg='white'
+        h={mediumScreen ? '50%' : '70%'}
+      >
+        {children}
+      </Container>
+    </AppShell>
   );
 };
 

@@ -1,4 +1,4 @@
-import { Center, TextInput, PasswordInput, MediaQuery } from '@mantine/core';
+import { TextInput, PasswordInput, Flex, Title } from '@mantine/core';
 import { useForm, yupResolver } from '@mantine/form';
 import * as Yup from 'yup';
 import { SchemaOf } from 'yup';
@@ -9,7 +9,6 @@ import {
   REQUIRED_MESSAGE,
 } from 'yup/messages';
 import Button from 'components/commons/Button/Button';
-import './Login.styles.scss';
 import { useMediaQuery } from '@mantine/hooks';
 
 interface ISignInFormValues {
@@ -36,10 +35,17 @@ const Login = () => {
   const largeScreen = useMediaQuery('(min-width: 900px)');
 
   return (
-    <div className='login_container'>
-      <h1>Log in to ShareSpot</h1>
+    <Flex gap='xl' justify='center' align='center' direction='column'>
+      <Title
+        color={'var(--mantine-color-brand-1)'}
+        mt='40px'
+        mb='xl'
+        size={largeScreen ? 'h1' : 'h3'}
+      >
+        Log in to ShareSpot
+      </Title>
       <form onSubmit={form.onSubmit((values) => console.log(values))}>
-        <Center className='form_container'>
+        <Flex gap='40px' justify='center' align='center' direction='column'>
           <TextInput
             label='Your e-mail:'
             type='email'
@@ -56,9 +62,9 @@ const Login = () => {
             w={largeScreen ? '500px' : '300px'}
           />
           <Button text='Log in' type='submit' />
-        </Center>
+        </Flex>
       </form>
-    </div>
+    </Flex>
   );
 };
 
