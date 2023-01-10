@@ -16,7 +16,7 @@ root.render(
       withNormalizeCSS
       theme={{
         colors: {
-          brand: ['#66a2ba', '#243a47'],
+          brand: ['#66a2ba', '#070A0D'],
         },
         primaryColor: 'brand',
         components: {

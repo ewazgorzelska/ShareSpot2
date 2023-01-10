@@ -13,6 +13,7 @@ const Logo = () => {
         src={
           mediumScreen ? 'assets/logo-primary.png' : 'assets/logo-mobile.png'
         }
+        alt='logo'
       />
     </Anchor>
   );

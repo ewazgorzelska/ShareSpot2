@@ -49,14 +49,17 @@ const Login = () => {
           <TextInput
             label='Your e-mail:'
             type='email'
-            withAsterisk
             required
             {...form.getInputProps('email')}
             w={largeScreen ? '500px' : '300px'}
+            styles={{
+              label: {
+                color: 'var(--mantine-color-brand-1)',
+              },
+            }}
           />
           <PasswordInput
             label='Your password:'
-            withAsterisk
             required
             {...form.getInputProps('password')}
             w={largeScreen ? '500px' : '300px'}

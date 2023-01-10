@@ -17,19 +17,16 @@ const Button: React.FC<IButtonProps> = ({
       type={type || 'button'}
       onClick={onClickHandler}
       disabled={disabled}
-      styles={(theme) => ({
+      styles={{
         root: {
           width: '150px',
           backgroundColor: 'var(--mantine-color-brand-1)',
 
           '&:hover': {
-            backgroundColor: theme.fn.darken(
-              'var(--mantine-color-brand-1)',
-              0.5,
-            ),
+            filter: 'drop-shadow(3px 3px 3px rgba(0,0,0,0.3))',
           },
         },
-      })}
+      }}
     >
       {text}
     </MantineButton>
