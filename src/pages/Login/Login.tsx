@@ -1,5 +1,7 @@
+import { Link } from 'react-router-dom';
 import { TextInput, PasswordInput, Flex, Title } from '@mantine/core';
 import { useForm, yupResolver } from '@mantine/form';
+import { useMediaQuery } from '@mantine/hooks';
 import * as Yup from 'yup';
 import { SchemaOf } from 'yup';
 import {
@@ -9,7 +11,6 @@ import {
   REQUIRED_MESSAGE,
 } from 'yup/messages';
 import Button from 'components/commons/Button/Button';
-import { useMediaQuery } from '@mantine/hooks';
 
 interface ISignInFormValues {
   email: string;
@@ -35,10 +36,9 @@ const Login = () => {
   const largeScreen = useMediaQuery('(min-width: 900px)');
 
   return (
-    <Flex gap='xl' justify='center' align='center' direction='column'>
+    <Flex gap='xl' justify='center' align='center' direction='column' mb='40px'>
       <Title
         color={'var(--mantine-color-brand-1)'}
-        mt='40px'
         mb='xl'
         size={largeScreen ? 'h1' : 'h3'}
       >
@@ -65,6 +65,7 @@ const Login = () => {
             w={largeScreen ? '500px' : '300px'}
           />
           <Button text='Log in' type='submit' />
+          <Link to='/signup'>Sign Up</Link>
         </Flex>
       </form>
     </Flex>

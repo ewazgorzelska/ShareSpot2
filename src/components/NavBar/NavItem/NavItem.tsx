@@ -1,4 +1,5 @@
-import { Anchor } from '@mantine/core';
+import { Link } from 'react-router-dom';
+import { Text } from '@mantine/core';
 import { useHover } from '@mantine/hooks';
 
 interface INavItem {
@@ -7,26 +8,28 @@ interface INavItem {
 }
 
 const NavItem: React.FC<INavItem> = ({ children, url }) => {
-  const { hovered, ref } = useHover<HTMLAnchorElement>();
+  const { hovered, ref } = useHover();
 
   return (
-    <Anchor
-      href={url}
-      color='var(--mantine-color-brand-1)'
-      weight={700}
-      variant='text'
-      ref={ref}
-      underline={hovered}
-      styles={{
-        root: {
-          '&:hover': {
-            filter: 'drop-shadow(3px 3px 3px rgba(0,0,0,0.3))',
+    <Link to={url}>
+      <Text
+        span
+        color='var(--mantine-color-brand-1)'
+        weight={700}
+        variant='text'
+        ref={ref}
+        underline={hovered}
+        styles={{
+          root: {
+            '&:hover': {
+              filter: 'drop-shadow(3px 3px 3px rgba(0,0,0,0.3))',
+            },
           },
-        },
-      }}
-    >
-      {children}
-    </Anchor>
+        }}
+      >
+        {children}
+      </Text>
+    </Link>
   );
 };
 

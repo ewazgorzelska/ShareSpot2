@@ -22,9 +22,9 @@ const MainTemplate: React.FC<PropsWithChildren<IMainTemplate>> = ({
       })}
     >
       <Container
-        p='md'
+        p='xl'
         size={largeScreen ? 'md' : 'xs'}
-        bg='white'
+        bg={mediumScreen || largeScreen ? 'white' : 'inherit'}
         h={mediumScreen ? '50%' : '70%'}
       >
         {children}

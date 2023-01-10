@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom/client';
 import { MantineProvider } from '@mantine/core';
 import { RouterProvider } from 'react-router';
 import { router } from 'routes/routes';
-import MainTemplate from 'templates/MainTemplate/MainTemplate';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement,
@@ -15,6 +14,14 @@ root.render(
       withGlobalStyles
       withNormalizeCSS
       theme={{
+        globalStyles: () => ({
+          '*, *::before, *::after': {
+            boxSizing: 'border-box',
+          },
+          a: {
+            textDecoration: 'none',
+          },
+        }),
         colors: {
           brand: ['#66a2ba', '#070A0D'],
         },
@@ -32,9 +39,7 @@ root.render(
         },
       }}
     >
-      <MainTemplate>
-        <RouterProvider router={router} />
-      </MainTemplate>
+      <RouterProvider router={router} />
     </MantineProvider>
   </React.StrictMode>,
 );
