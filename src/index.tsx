@@ -36,6 +36,16 @@ root.render(
               },
             }),
           },
+          Button: {
+            styles: (theme) => ({
+              root: {
+                backgroundColor: 'var(--mantine-color-brand-1)',
+                '&:hover': {
+                  filter: 'drop-shadow(3px 3px 3px rgba(0,0,0,0.3))',
+                },
+              },
+            }),
+          },
         },
       }}
     >

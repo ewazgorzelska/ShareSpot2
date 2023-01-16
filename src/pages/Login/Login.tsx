@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { TextInput, PasswordInput, Flex, Title } from '@mantine/core';
+import { TextInput, PasswordInput, Flex, Title, Button } from '@mantine/core';
 import { useForm, yupResolver } from '@mantine/form';
 import { useMediaQuery } from '@mantine/hooks';
 import * as Yup from 'yup';
@@ -10,7 +10,6 @@ import {
   PASSWORD_MIN_LENGTH,
   REQUIRED_MESSAGE,
 } from 'yup/messages';
-import Button from 'components/commons/Button/Button';
 
 interface ISignInFormValues {
   email: string;
@@ -64,8 +63,8 @@ const Login = () => {
             {...form.getInputProps('password')}
             w={largeScreen ? '500px' : '300px'}
           />
-          <Button text='Log in' type='submit' />
-          <Link to='/signup'>Sign Up</Link>
+          <Button type='submit'>Log in</Button>
+          <Link to='/signup'>Sign up</Link>
         </Flex>
       </form>
     </Flex>

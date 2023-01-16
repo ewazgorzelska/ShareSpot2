@@ -25,7 +25,7 @@ const MainTemplate: React.FC<PropsWithChildren<IMainTemplate>> = ({
         p='xl'
         size={largeScreen ? 'md' : 'xs'}
         bg={mediumScreen || largeScreen ? 'white' : 'inherit'}
-        h={mediumScreen ? '50%' : '70%'}
+        mih={mediumScreen ? '50%' : '70%'}
       >
         {children}
       </Container>
